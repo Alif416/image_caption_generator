@@ -55,7 +55,7 @@ generateBtn.addEventListener('click', async () => {
   formData.append('image', selectedFile);
 
   try {
-    const response = await axios.post('http://localhost:5000/upload', formData);
+    const response = await axios.post('https://captiongenerator-backend-2.onrender.com', formData);
     captionText.textContent = response.data.caption;
     captionResult.classList.add('visible');
   } catch (error) {
