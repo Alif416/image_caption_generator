@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Magic Caption Generator ✨</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>✨ Magic Caption Generator</h1>
+      <p>Upload your photo and get Instagram-ready captions!</p>
+    </div>
+
+    <div class="upload-container" id="drop-zone">
+      <input type="file" id="image-input" accept="image/*" hidden>
+      <div class="upload-content">
+        <i class="fas fa-camera-retro upload-icon"></i>
+        <div class="upload-text">
+          <p>Drag & drop photo</p>
+          <p>or <span class="browse-link">browse files</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="preview-container">
+      <img id="preview" class="preview-image">
+      <div class="loading-spinner" id="loading-spinner"></div>
+    </div>
+
+    <button class="generate-btn pulse" id="generate-btn" disabled>
+      <i class="fas fa-magic"></i> Generate Caption
+    </button>
+
+    <div class="caption-card" id="caption-result">
+      <div class="caption-header">
+        <i class="fas fa-quote-left"></i>
+        <h3>Your Perfect Caption</h3>
+      </div>
+      <p id="caption-text"></p>
+      <div class="caption-actions">
+        <button class="copy-btn" onclick="copyCaption()">
+          <i class="fas fa-copy"></i> Copy
+        </button>
+        <div class="social-share">
+          <i class="fab fa-instagram" onclick="shareTo('instagram')"></i>
+          <i class="fab fa-twitter" onclick="shareTo('twitter')"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
